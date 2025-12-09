@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# secrets files - add your own API keys
-**/app/api/secrets.ts
+# secrets files - now using environment variables
+# **/app/api/secrets.ts
