@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd apps/demo && pnpm run build",
+  "buildCommand": "pnpm --filter demo build",
   "outputDirectory": "apps/demo/.next",
-  "devCommand": "cd apps/demo && pnpm run dev",
+  "devCommand": "pnpm --filter demo dev",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": "nextjs"
 }

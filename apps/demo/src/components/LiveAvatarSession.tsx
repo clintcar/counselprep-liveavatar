@@ -7,10 +7,7 @@ import {
   useTextChat,
   useVoiceChat,
 } from "../liveavatar";
-import {
-  SessionState,
-  ConnectionQuality,
-} from "@heygen/liveavatar-web-sdk";
+import { SessionState, ConnectionQuality } from "@heygen/liveavatar-web-sdk";
 import { useAvatarActions } from "../liveavatar/useAvatarActions";
 import { Button } from "./ui/Button";
 import { AvatarConfig } from "./AvatarConfig";
