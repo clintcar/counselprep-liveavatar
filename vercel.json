@@ -3,5 +3,6 @@
   "outputDirectory": "apps/demo/.next",
   "devCommand": "pnpm --filter demo dev",
   "installCommand": "pnpm install --frozen-lockfile",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "rewrites": []
 }
