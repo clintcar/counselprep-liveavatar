@@ -1,23 +1,19 @@
 export const AVATARS = [
   {
-    avatar_id: "Ann_Therapist_public",
-    name: "Ann Therapist",
+    avatar_id: "0930fd59-c8ad-434d-ad53-b391a1768720",
+    name: "Dexter",
   },
   {
-    avatar_id: "Shawn_Therapist_public",
-    name: "Shawn Therapist",
+    avatar_id: "e9844e6d-847e-4964-a92b-7ecd066f69df",
+    name: "Graham",
   },
   {
-    avatar_id: "Bryan_FitnessCoach_public",
-    name: "Bryan Fitness Coach",
+    avatar_id: "073b60a9-89a8-45aa-8902-c358f64d2852",
+    name: "Katya",
   },
   {
-    avatar_id: "Dexter_Doctor_Standing2_public",
-    name: "Dexter Doctor Standing",
-  },
-  {
-    avatar_id: "Elenora_IT_Sitting_public",
-    name: "Elenora Tech Expert",
+    avatar_id: "bf00036b-558a-44b5-b2ff-1e3cec0f4ceb",
+    name: "Marianne",
   },
 ];
 

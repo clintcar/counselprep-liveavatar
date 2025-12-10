@@ -5,7 +5,20 @@ export async function POST(request: Request) {
   let session_id = "";
   try {
     const body = await request.json().catch(() => ({}));
-    const avatarId = body.avatar_id || AVATAR_ID;
+
+    // Validate avatar_id is a UUID format, otherwise use default
+    const isValidUUID = (str: string) => {
+      const uuidRegex =
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      return uuidRegex.test(str);
+    };
+
+    const providedAvatarId = body.avatar_id;
+    const avatarId =
+      providedAvatarId && isValidUUID(providedAvatarId)
+        ? providedAvatarId
+        : AVATAR_ID;
+
     const language = body.language || LANGUAGE;
     const emotion = body.emotion;
 
@@ -35,9 +48,20 @@ export async function POST(request: Request) {
       }),
     });
     if (!res.ok) {
-      const resp = await res.json();
-      const errorMessage =
-        resp.data[0].message ?? "Failed to retrieve session token";
+      const resp = await res.json().catch(() => ({}));
+      let errorMessage = "Failed to retrieve session token";
+
+      if (resp?.data?.[0]?.message) {
+        errorMessage = resp.data[0].message;
+      } else if (resp?.message) {
+        errorMessage = resp.message;
+      } else if (resp?.error) {
+        errorMessage =
+          typeof resp.error === "string"
+            ? resp.error
+            : resp.error.message || "Failed to retrieve session token";
+      }
+
       return new Response(JSON.stringify({ error: errorMessage }), {
         status: res.status,
       });

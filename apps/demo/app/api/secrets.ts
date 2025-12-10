@@ -4,7 +4,7 @@ export const API_KEY =
 export const API_URL =
   process.env.LIVEAVATAR_API_URL || "https://api.liveavatar.com";
 export const AVATAR_ID =
-  process.env.LIVEAVATAR_AVATAR_ID || "dd73ea75-1218-4ef3-92ce-606d5f7fbc0a";
+  process.env.LIVEAVATAR_AVATAR_ID || "0930fd59-c8ad-434d-ad53-b391a1768720";
 
 // FULL MODE Customizations
 export const VOICE_ID =
